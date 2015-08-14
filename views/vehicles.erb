@@ -1,0 +1,8 @@
+<h1>Here They Are!</h1>
+
+<h3>Here are all the vehicles currently on this lot: </h3>
+<ul>
+  <% @vehicles.each() do |vehicle| %>
+    <li><a href="/vehicle/<%= vehicle.id() %>"><%= vehicle.make() %> <%= vehicle.model() %> <%= vehicle.year() %></a></li>
+  <% end %>
+</ul>
