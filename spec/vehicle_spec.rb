@@ -49,3 +49,21 @@ describe(".clear") do
   expect(Vehicle.all()).to(eq([]))
   end
 end
+
+describe("#id") do
+  it("returns the id of the vehicle") do
+    test_vehicle = Vehicle.new("Toyota", "Yaris", 2013)
+    test_vehicle.save()
+    expect(test_vehicle.id()).to(eq(1))
+  end
+end
+
+describe(".find") do
+  it("returns the vehicle based on id") do
+    test_vehicle = Vehicle.new("Toyota", "Yaris", 2013)
+    test_vehicle.save()
+    test_vehicle2 = Vehicle.new("Honda", "Accord", 1999)
+    test_vehicle2.save()
+    expect(Vehicle.find(test_vehicle.id())).to(eq(test_vehicle))
+  end
+end
